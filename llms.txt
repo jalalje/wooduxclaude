@@ -1,0 +1,20 @@
+# Woodux
+
+> Woodux is a digital library of woodworking, outbuilding, workshop-setup, and self-sufficiency guides, linking to curated ClickBank-sold plan collections, alongside 23 free guides that explain how to evaluate a plan library, a joint, a foundation, or a tool purchase before buying.
+
+## Collections (affiliate links, ClickBank, 60-day guarantee)
+
+- [Complete Furniture & Craft Archive](https://go.saidelmardi.com/diy): a large library of pre-measured furniture and project plans with 3D diagrams and cut lists.
+- [Backyard Shed & Outbuilding System](https://go.saidelmardi.com/shedbuilder): structural shed and outbuilding blueprints with foundation and rafter templates.
+- [The Practical Home Workshop Guide](https://go.saidelmardi.com/woodworkshop): a budget workshop setup manual for a garage, basement, or small shed.
+- [Self-Sufficiency & Timber Craft Manual](https://go.saidelmardi.com/selfgrow): a homesteading and off-grid living manual with 65+ hands-on projects.
+
+## All Guides
+
+See [the full guides index](https://woodux.vercel.app/articles/index.html) for all 23 free guides, grouped into: Plans & Cut Lists, Sheds & Outbuildings, Workshop Setup, Homestead & Self-Sufficiency, Furniture & Materials, and Buying a Digital Plan Library.
+
+New this round: Adirondack chair build difficulty, beginner outdoor furniture cost and difficulty ranking, pocket-hole vs. mortise-and-tenon joinery, best wood for outdoor furniture, off-grid water storage sizing, and table saw vs. circular saw for beginners.
+
+## Disclosure
+
+This site earns a commission on purchases made through the collection links above, at no extra cost to the buyer. All products are sold and fulfilled by ClickBank.
