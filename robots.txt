@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://woodux.vercel.app/sitemap.xml
+Sitemap: https://woodux.online/sitemap.xml
