@@ -2,6 +2,8 @@
 
 Woodux is a pure static HTML site. There is no build step, no Node.js runtime, no database, and no environment variables required.
 
+Live at: **https://woodux.online** (custom domain — not the `.vercel.app` subdomain; `www.woodux.online` and `woodux.vercel.app` both 308-redirect to it)
+
 ---
 
 ## Deploy to Vercel (recommended)
@@ -17,7 +19,7 @@ Woodux is a pure static HTML site. There is no build step, no Node.js runtime, n
    - **Install Command:** leave blank
 4. Click **Deploy**.
 
-Vercel detects `vercel.json` automatically and applies all routing and header rules.
+Vercel detects `vercel.json` automatically and applies all routing and header rules, including `cleanUrls: false` — this is intentional. Every canonical tag, sitemap entry, and internal link on the site uses the `.html` extension; `cleanUrls: true` will make Vercel auto-redirect away from those URLs and break every canonical tag on the site. Leave it `false`.
 
 ### Option B — Vercel CLI
 
@@ -47,14 +49,18 @@ This site has zero runtime dependencies. No `.env` file is needed. Nothing to co
 
 ```
 woodux-deploy/
-├── index.html              # Homepage
+├── index.html                  # Homepage
 ├── articles/
-│   ├── index.html          # All guides hub
-│   └── *.html              # 23 individual guide pages
-├── sitemap.xml             # Full sitemap for all 25 pages
-├── robots.txt              # Allows all crawlers, points to sitemap
-├── llms.txt                # AI/LLM crawler index
-├── vercel.json             # Routing, rewrites, security headers, cache rules
+│   ├── index.html              # All guides hub
+│   └── *.html                  # 40 individual guide pages
+├── sitemap.xml                 # Full sitemap, 42 URLs, all with lastmod
+├── robots.txt                  # Allows all crawlers, points to sitemap
+├── llms.txt                    # AI/LLM crawler index
+├── vercel.json                 # Routing, rewrites, security headers, cache rules
+├── favicon.ico, favicon-16x16.png, favicon-32x32.png
+├── apple-touch-icon.png, android-chrome-192x192.png, android-chrome-512x512.png
+├── site.webmanifest
+├── og-image.png                # Social share image, 1200x630
 ├── .gitignore
 └── README.md
 ```
@@ -63,23 +69,21 @@ woodux-deploy/
 
 ## After deployment
 
-1. **Submit your sitemap** to Google Search Console:
-   `https://woodux.vercel.app/sitemap.xml`
-2. **Check your custom domain** in Vercel → Settings → Domains if you want to move off the `.vercel.app` subdomain.
-3. **Update `sitemap.xml` and canonical URLs** if you switch to a custom domain — replace every instance of `woodux.vercel.app` with your new domain.
+1. **Confirm the sitemap** is reachable at `https://woodux.online/sitemap.xml` and submitted in both Google Search Console and Bing Webmaster Tools.
+2. **Confirm `og-image.png` resolves** at `https://woodux.online/og-image.png` — if it 404s despite a successful Vercel deployment, check the Deployments tab for the exact deployment and open its unique `*.vercel.app` URL directly to see whether the file is present on that build output before assuming it's a code problem.
+3. If you ever add another custom domain, keep exactly one as Production in Vercel → Settings → Domains, with every other domain set to redirect to it — matching canonical tags to actual server behavior is what keeps search engines from treating the site as duplicate content.
 
 ---
 
 ## Affiliate links
 
-All four affiliate links point to `go.saidelmardi.com`. No changes needed after deployment — they are hardcoded in the HTML files.
+Affiliate links currently point to `go.saidelmardi.com` (ClickBank). No changes needed after deployment — they are hardcoded in the HTML files. If these are ever replaced with different affiliate programs, update the links directly in each article's body and in the homepage's collection cards.
 
 ---
 
 ## Adding new pages
 
-1. Create a new `.html` file in `articles/`.
-2. Copy the header/footer pattern from any existing article file.
-3. Add the new URL to `sitemap.xml`.
-4. Link to it from `articles/index.html` and at least one existing article.
-5. Redeploy (push to GitHub, Vercel deploys automatically).
+1. Create a new `.html` file in `articles/`, using the exact head/header/footer pattern from any existing article file — including the canonical tag, `og:image`/`twitter:card` meta, `BreadcrumbList` JSON-LD, and favicon links.
+2. Add the new URL to `sitemap.xml` with a `lastmod` date.
+3. Link to it from `articles/index.html` (add it to the right topic section) and from at least one existing, related article.
+4. Redeploy (push to GitHub, Vercel deploys automatically).
