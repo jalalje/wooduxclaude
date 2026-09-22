@@ -1,20 +1,20 @@
 # Woodux
 
-> Woodux is a digital library of woodworking, outbuilding, workshop-setup, and self-sufficiency guides, linking to curated ClickBank-sold plan collections, alongside 23 free guides that explain how to evaluate a plan library, a joint, a foundation, or a tool purchase before buying.
+> Woodux is a free library of 40 woodworking, outbuilding, workshop-setup, and self-sufficiency guides. Where relevant, articles link to real external retailers, plan publishers, and course providers — not products Woodux sells itself.
 
-## Collections (affiliate links, ClickBank, 60-day guarantee)
+## Resources we recommend (not affiliate links currently)
 
-- [Complete Furniture & Craft Archive](https://go.saidelmardi.com/diy): a large library of pre-measured furniture and project plans with 3D diagrams and cut lists.
-- [Backyard Shed & Outbuilding System](https://go.saidelmardi.com/shedbuilder): structural shed and outbuilding blueprints with foundation and rafter templates.
-- [The Practical Home Workshop Guide](https://go.saidelmardi.com/woodworkshop): a budget workshop setup manual for a garage, basement, or small shed.
-- [Self-Sufficiency & Timber Craft Manual](https://go.saidelmardi.com/selfgrow): a homesteading and off-grid living manual with 65+ hands-on projects.
+- [ShopWoodworking.com](https://www.shopwoodworking.com/): editorially checked project plans and books, from Popular Woodworking's publisher.
+- [Rockler](https://www.rockler.com/): a large, long-established woodworking tool and hardware retailer.
+- [Woodworkers Guild of America](https://www.wwgoa.com/): structured, project-based video courses.
+- [KC Tool](https://www.kctool.com/): a German hand-tool importer (Knipex, Wera, Stahlwille).
+
+None of these are currently affiliate relationships. If that changes for a given company, the disclosure on the relevant page will say so.
 
 ## All Guides
 
-See [the full guides index](https://woodux.online/articles/index.html) for all 23 free guides, grouped into: Plans & Cut Lists, Sheds & Outbuildings, Workshop Setup, Homestead & Self-Sufficiency, Furniture & Materials, and Buying a Digital Plan Library.
-
-New this round: Adirondack chair build difficulty, beginner outdoor furniture cost and difficulty ranking, pocket-hole vs. mortise-and-tenon joinery, best wood for outdoor furniture, off-grid water storage sizing, and table saw vs. circular saw for beginners.
+See [the full guides index](https://woodux.online/articles/index.html) for all 40 free guides, grouped into: Beginner Projects & Skills, Plans & Cut Lists, Sheds & Outbuildings, Workshop Setup, Power Tools & Buying Guides, Homestead & Self-Sufficiency, Furniture & Materials, and General Woodworking Questions.
 
 ## Disclosure
 
-This site earns a commission on purchases made through the collection links above, at no extra cost to the buyer. All products are sold and fulfilled by ClickBank.
+Woodux does not sell products directly. Outbound links go to external companies we think are worth a visit, and none of them are currently paying Woodux a commission.
