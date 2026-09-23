@@ -15,8 +15,15 @@
     {
       "source": "/articles/(.*)\\.html",
       "headers": [
-        { "key": "Link", "value": "</assets/article-enhancements.css>; rel=stylesheet" },
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+        { "key": "Link", "value": "</assets/article-enhancements.css?v=20260923>; rel=stylesheet; type=text/css" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/assets/article-enhancements.css",
+      "headers": [
+        { "key": "Content-Type", "value": "text/css; charset=utf-8" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
       ]
     },
     {
