@@ -1,11 +1,12 @@
 /* Woodux article system — polished shared design layer.
-   It intentionally styles the existing HTML structure instead of replacing article markup. */
+   Existing article markup remains intact; this layer improves every guide consistently. */
 :root {
   --wood-950: #2a1711;
   --wood-900: #4e2f24;
   --wood-700: #734430;
   --wood-600: #8f5a3b;
   --wood-500: #aa734d;
+  --wood-300: #d0b396;
   --wood-200: #e3d2bf;
   --wood-100: #f2eae0;
   --paper: #faf7f2;
@@ -23,19 +24,37 @@ body > main.max-w-3xl::before {
   display: flex;
   align-items: flex-end;
   width: 100%;
-  min-height: 235px;
+  min-height: 245px;
   margin: 0 0 2.25rem;
   padding: 1.5rem 1.75rem;
-  border-radius: 1.25rem;
+  border-radius: 1.35rem;
   color: #f9e9cf;
   font-size: .72rem;
   font-weight: 900;
   letter-spacing: .14em;
   text-shadow: 0 2px 12px rgba(0,0,0,.45);
   background:
-    linear-gradient(180deg, rgba(42,23,17,.08) 20%, rgba(42,23,17,.84) 100%),
+    linear-gradient(180deg, rgba(42,23,17,.08) 20%, rgba(42,23,17,.88) 100%),
     url("https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1600&q=82") center 54% / cover;
   box-shadow: 0 18px 35px rgba(78,47,36,.14);
+}
+
+/* A compact decision strip gives commercial-investigation readers an immediate frame. */
+body > main.max-w-3xl::after {
+  content: "COMPARE FIT  •  SPACE  •  SAFETY  •  TOTAL COST  •  BUY ONLY WHEN THE PROJECT NEEDS IT";
+  display: block;
+  max-width: 780px;
+  margin: 2rem 0 0;
+  padding: .85rem 1rem;
+  border: 1px solid var(--wood-200);
+  border-radius: .8rem;
+  background: linear-gradient(100deg, var(--wood-100), #fff);
+  color: var(--wood-700);
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .095em;
+  line-height: 1.6;
+  text-align: center;
 }
 
 body > main.max-w-3xl > nav {
@@ -124,11 +143,7 @@ body > main.max-w-3xl > ol {
   background: rgba(255,255,255,.72);
 }
 
-body > main.max-w-3xl li::marker {
-  color: var(--wood-500);
-  font-weight: 900;
-}
-
+body > main.max-w-3xl li::marker { color: var(--wood-500); font-weight: 900; }
 body > main.max-w-3xl strong { color: var(--wood-950); }
 
 body > main.max-w-3xl > div.bg-white {
@@ -157,125 +172,6 @@ body > main.max-w-3xl > p.text-sm.text-stone-600:last-child {
   border-top: 1px solid var(--wood-200);
 }
 
-/* Added visual decision blocks for high-buying-intent pages */
-.woodux-visual-hero,
-.woodux-compare-grid,
-.woodux-buying-checklist,
-.woodux-infobox {
-  max-width: 780px;
-  margin: 1.25rem 0 2rem;
-}
-
-.woodux-visual-hero {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 1rem;
-  align-items: center;
-  padding: .9rem;
-  border: 1px solid var(--wood-200);
-  border-radius: 1.2rem;
-  background: linear-gradient(135deg, rgba(242,234,224,.7), rgba(255,255,255,.9));
-  box-shadow: 0 12px 28px rgba(78,47,36,.08);
-}
-
-.woodux-visual-hero img {
-  display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: .9rem;
-}
-
-.woodux-visual-hero .copy {
-  padding: .4rem .55rem .2rem;
-}
-
-.woodux-visual-hero .copy span {
-  display: inline-block;
-  margin-bottom: .6rem;
-  color: var(--wood-700);
-  font-size: .68rem;
-  font-weight: 900;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-.woodux-visual-hero .copy h3 {
-  margin: 0 0 .5rem;
-  color: var(--wood-950);
-  font-size: clamp(1.15rem, 2vw, 1.5rem);
-  line-height: 1.2;
-}
-
-.woodux-visual-hero .copy p {
-  margin: 0;
-  color: #514640;
-  line-height: 1.7;
-}
-
-.woodux-compare-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: .9rem;
-}
-
-.woodux-compare-grid .metric {
-  padding: 1rem .9rem;
-  border: 1px solid var(--wood-200);
-  border-radius: .9rem;
-  background: rgba(255,255,255,.7);
-}
-
-.woodux-compare-grid .metric strong {
-  display: block;
-  color: var(--wood-950);
-  font-size: 1.7rem;
-  line-height: 1.1;
-}
-
-.woodux-compare-grid .metric span {
-  color: var(--muted);
-  font-size: .82rem;
-  font-weight: 700;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-
-.woodux-buying-checklist {
-  padding: 1rem 1.15rem;
-  border-left: 4px solid var(--wood-500);
-  border-radius: 0 .9rem .9rem 0;
-  background: linear-gradient(135deg, rgba(242,234,224,.8), rgba(255,255,255,.8));
-}
-
-.woodux-buying-checklist h4,
-.woodux-infobox h4 {
-  margin: 0 0 .8rem;
-  color: var(--wood-950);
-  font-size: 1rem;
-  font-weight: 900;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-}
-
-.woodux-buying-checklist ul {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-
-.woodux-infobox {
-  padding: 1rem 1.15rem;
-  border: 1px solid var(--wood-200);
-  border-radius: 1rem;
-  background: linear-gradient(135deg, #fff, #f5ece3);
-}
-
-.woodux-infobox p {
-  margin: 0;
-  color: #514640;
-  line-height: 1.7;
-}
-
 body > main.max-w-5xl > h1 {
   color: var(--wood-950);
   font-size: clamp(2.2rem, 5vw, 3.6rem);
@@ -298,19 +194,10 @@ body > main.max-w-5xl > section a:focus {
   box-shadow: 0 12px 24px rgba(78,47,36,.1);
 }
 
-@media (max-width: 760px) {
-  .woodux-visual-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .woodux-compare-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 640px) {
   body > main.max-w-3xl { padding-left: 1.1rem; padding-right: 1.1rem; }
   body > main.max-w-3xl::before { min-height: 155px; margin-bottom: 1.5rem; padding: 1rem; font-size: .6rem; }
+  body > main.max-w-3xl::after { font-size: .58rem; }
   body > main.max-w-3xl > h1 { font-size: 2.35rem; }
   body > main.max-w-3xl > p.text-stone-700:first-of-type { font-size: 1rem; }
 }
