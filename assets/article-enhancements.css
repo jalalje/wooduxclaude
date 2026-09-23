@@ -1,0 +1,52 @@
+/* Woodux article enhancements — additive only. The existing Tailwind layout remains the source of truth. */
+body > main.max-w-3xl {
+  position: relative;
+}
+
+/* A lightweight visual lead keeps article pages engaging without moving the title or changing the original layout. */
+body > main.max-w-3xl::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 190px;
+  margin-bottom: 1.75rem;
+  border-radius: 1rem;
+  background:
+    linear-gradient(90deg, rgba(42,23,17,.78), rgba(42,23,17,.12)),
+    url("https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1400&q=80") center/cover;
+  box-shadow: 0 10px 25px rgba(78,47,36,.12);
+}
+
+body > main.max-w-3xl > h1 {
+  text-wrap: balance;
+}
+
+body > main.max-w-3xl > h2 {
+  position: relative;
+  padding-left: .85rem;
+  border-left: 4px solid #aa734d;
+  scroll-margin-top: 1rem;
+}
+
+body > main.max-w-3xl > h2::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: .55rem;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #aa734d, #e3d2bf);
+}
+
+/* Improves commercial-intent link visibility while retaining the existing button design. */
+body > main.max-w-3xl a[target="_blank"] {
+  text-underline-offset: 3px;
+}
+
+body > main.max-w-3xl > div.bg-white {
+  box-shadow: 0 10px 24px rgba(78,47,36,.08);
+}
+
+@media (max-width: 640px) {
+  body > main.max-w-3xl::before { height: 140px; margin-bottom: 1.25rem; }
+}

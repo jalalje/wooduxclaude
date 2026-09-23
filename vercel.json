@@ -15,6 +15,7 @@
     {
       "source": "/articles/(.*)\\.html",
       "headers": [
+        { "key": "Link", "value": "</assets/article-enhancements.css>; rel=stylesheet" },
         { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
       ]
     },
