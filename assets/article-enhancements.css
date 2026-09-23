@@ -1,52 +1,195 @@
-/* Woodux article enhancements — additive only. The existing Tailwind layout remains the source of truth. */
-body > main.max-w-3xl {
-  position: relative;
+/* Woodux article system — polished shared design layer.
+   It intentionally styles the existing HTML structure instead of replacing article markup. */
+:root {
+  --wood-950: #2a1711;
+  --wood-900: #4e2f24;
+  --wood-700: #734430;
+  --wood-600: #8f5a3b;
+  --wood-500: #aa734d;
+  --wood-200: #e3d2bf;
+  --wood-100: #f2eae0;
+  --paper: #faf7f2;
+  --ink: #30231e;
+  --muted: #665b55;
 }
 
-/* A lightweight visual lead keeps article pages engaging without moving the title or changing the original layout. */
+body > main.max-w-3xl {
+  max-width: 900px !important;
+  color: var(--ink);
+}
+
 body > main.max-w-3xl::before {
-  content: "";
-  display: block;
+  content: "WOODUX FIELD GUIDE  •  BUYING SMARTER  •  BUILDING BETTER";
+  display: flex;
+  align-items: flex-end;
   width: 100%;
-  height: 190px;
-  margin-bottom: 1.75rem;
-  border-radius: 1rem;
+  min-height: 235px;
+  margin: 0 0 2.25rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: 1.25rem;
+  color: #f9e9cf;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-shadow: 0 2px 12px rgba(0,0,0,.45);
   background:
-    linear-gradient(90deg, rgba(42,23,17,.78), rgba(42,23,17,.12)),
-    url("https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1400&q=80") center/cover;
-  box-shadow: 0 10px 25px rgba(78,47,36,.12);
+    linear-gradient(180deg, rgba(42,23,17,.08) 20%, rgba(42,23,17,.84) 100%),
+    url("https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1600&q=82") center 54% / cover;
+  box-shadow: 0 18px 35px rgba(78,47,36,.14);
+}
+
+body > main.max-w-3xl > nav {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+body > main.max-w-3xl > nav a,
+body > main.max-w-3xl a {
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+body > main.max-w-3xl > p.text-xs.font-bold {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .4rem .7rem;
+  border: 1px solid var(--wood-200);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--wood-700);
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 body > main.max-w-3xl > h1 {
+  max-width: 820px;
+  margin-top: .75rem;
+  color: var(--wood-950);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -.045em;
   text-wrap: balance;
+}
+
+/* The opening paragraph becomes a useful answer-first summary for readers and AI extraction. */
+body > main.max-w-3xl > p.text-stone-700:first-of-type {
+  max-width: 780px;
+  margin: 1.5rem 0 2.25rem;
+  padding: 1.25rem 1.35rem;
+  border-left: 4px solid var(--wood-500);
+  border-radius: 0 .9rem .9rem 0;
+  background: linear-gradient(100deg, var(--wood-100), rgba(242,234,224,.25));
+  color: #493a32;
+  font-size: 1.08rem;
+  line-height: 1.75;
 }
 
 body > main.max-w-3xl > h2 {
   position: relative;
-  padding-left: .85rem;
-  border-left: 4px solid #aa734d;
+  max-width: 780px;
+  margin-top: 3.25rem !important;
+  padding: 0 0 .7rem .95rem;
+  border-left: 4px solid var(--wood-500);
+  border-bottom: 1px solid var(--wood-200);
+  color: var(--wood-950);
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+  line-height: 1.2;
   scroll-margin-top: 1rem;
 }
 
 body > main.max-w-3xl > h2::after {
   content: "";
   display: block;
-  width: 3rem;
+  width: 3.5rem;
   height: 3px;
-  margin-top: .55rem;
+  margin-top: .6rem;
   border-radius: 99px;
-  background: linear-gradient(90deg, #aa734d, #e3d2bf);
+  background: linear-gradient(90deg, var(--wood-500), var(--wood-200));
 }
 
-/* Improves commercial-intent link visibility while retaining the existing button design. */
-body > main.max-w-3xl a[target="_blank"] {
-  text-underline-offset: 3px;
+body > main.max-w-3xl > p.text-stone-700,
+body > main.max-w-3xl > ul,
+body > main.max-w-3xl > ol {
+  max-width: 780px;
+  color: #514640;
+  font-size: 1.02rem;
+  line-height: 1.85;
 }
 
+body > main.max-w-3xl > ul,
+body > main.max-w-3xl > ol {
+  padding: 1.15rem 1.5rem 1.15rem 2.4rem;
+  border: 1px solid var(--wood-200);
+  border-radius: .9rem;
+  background: rgba(255,255,255,.72);
+}
+
+body > main.max-w-3xl li::marker {
+  color: var(--wood-500);
+  font-weight: 900;
+}
+
+body > main.max-w-3xl strong { color: var(--wood-950); }
+
+/* Commercial-intent CTA: prominent, but still editorial rather than aggressive. */
 body > main.max-w-3xl > div.bg-white {
-  box-shadow: 0 10px 24px rgba(78,47,36,.08);
+  max-width: 780px;
+  margin-top: 3rem !important;
+  border: 1px solid var(--wood-200) !important;
+  border-top: 4px solid var(--wood-500) !important;
+  background: linear-gradient(135deg, #fff, #f8efe6) !important;
+  box-shadow: 0 18px 35px rgba(78,47,36,.11);
+}
+
+body > main.max-w-3xl > div.bg-white a[target="_blank"]:last-child {
+  box-shadow: 0 7px 16px rgba(143,90,59,.22);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+body > main.max-w-3xl > div.bg-white a[target="_blank"]:last-child:hover,
+body > main.max-w-3xl > div.bg-white a[target="_blank"]:last-child:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 11px 22px rgba(143,90,59,.3);
+}
+
+body > main.max-w-3xl > p.text-sm.text-stone-600:last-child {
+  max-width: 780px;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--wood-200);
+}
+
+/* Guide index gets the same visual language without changing its existing cards. */
+body > main.max-w-5xl > h1 {
+  color: var(--wood-950);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  letter-spacing: -.04em;
+}
+
+body > main.max-w-5xl > section > h2 {
+  padding-left: .8rem;
+  border-left: 4px solid var(--wood-500);
+  color: var(--wood-950);
+}
+
+body > main.max-w-5xl > section a {
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+body > main.max-w-5xl > section a:hover,
+body > main.max-w-5xl > section a:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(78,47,36,.1);
 }
 
 @media (max-width: 640px) {
-  body > main.max-w-3xl::before { height: 140px; margin-bottom: 1.25rem; }
+  body > main.max-w-3xl { padding-left: 1.1rem; padding-right: 1.1rem; }
+  body > main.max-w-3xl::before { min-height: 155px; margin-bottom: 1.5rem; padding: 1rem; font-size: .6rem; }
+  body > main.max-w-3xl > h1 { font-size: 2.35rem; }
+  body > main.max-w-3xl > p.text-stone-700:first-of-type { font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body > main.max-w-3xl > div.bg-white a[target="_blank"]:last-child,
+  body > main.max-w-5xl > section a { transition: none; }
 }
