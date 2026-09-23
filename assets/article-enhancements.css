@@ -14,7 +14,7 @@
 }
 
 body > main.max-w-3xl {
-  max-width: 900px !important;
+  max-width: 920px !important;
   color: var(--ink);
 }
 
@@ -72,7 +72,6 @@ body > main.max-w-3xl > h1 {
   text-wrap: balance;
 }
 
-/* The opening paragraph becomes a useful answer-first summary for readers and AI extraction. */
 body > main.max-w-3xl > p.text-stone-700:first-of-type {
   max-width: 780px;
   margin: 1.5rem 0 2.25rem;
@@ -132,7 +131,6 @@ body > main.max-w-3xl li::marker {
 
 body > main.max-w-3xl strong { color: var(--wood-950); }
 
-/* Commercial-intent CTA: prominent, but still editorial rather than aggressive. */
 body > main.max-w-3xl > div.bg-white {
   max-width: 780px;
   margin-top: 3rem !important;
@@ -159,7 +157,125 @@ body > main.max-w-3xl > p.text-sm.text-stone-600:last-child {
   border-top: 1px solid var(--wood-200);
 }
 
-/* Guide index gets the same visual language without changing its existing cards. */
+/* Added visual decision blocks for high-buying-intent pages */
+.woodux-visual-hero,
+.woodux-compare-grid,
+.woodux-buying-checklist,
+.woodux-infobox {
+  max-width: 780px;
+  margin: 1.25rem 0 2rem;
+}
+
+.woodux-visual-hero {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 1rem;
+  align-items: center;
+  padding: .9rem;
+  border: 1px solid var(--wood-200);
+  border-radius: 1.2rem;
+  background: linear-gradient(135deg, rgba(242,234,224,.7), rgba(255,255,255,.9));
+  box-shadow: 0 12px 28px rgba(78,47,36,.08);
+}
+
+.woodux-visual-hero img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: .9rem;
+}
+
+.woodux-visual-hero .copy {
+  padding: .4rem .55rem .2rem;
+}
+
+.woodux-visual-hero .copy span {
+  display: inline-block;
+  margin-bottom: .6rem;
+  color: var(--wood-700);
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.woodux-visual-hero .copy h3 {
+  margin: 0 0 .5rem;
+  color: var(--wood-950);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.2;
+}
+
+.woodux-visual-hero .copy p {
+  margin: 0;
+  color: #514640;
+  line-height: 1.7;
+}
+
+.woodux-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .9rem;
+}
+
+.woodux-compare-grid .metric {
+  padding: 1rem .9rem;
+  border: 1px solid var(--wood-200);
+  border-radius: .9rem;
+  background: rgba(255,255,255,.7);
+}
+
+.woodux-compare-grid .metric strong {
+  display: block;
+  color: var(--wood-950);
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+.woodux-compare-grid .metric span {
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.woodux-buying-checklist {
+  padding: 1rem 1.15rem;
+  border-left: 4px solid var(--wood-500);
+  border-radius: 0 .9rem .9rem 0;
+  background: linear-gradient(135deg, rgba(242,234,224,.8), rgba(255,255,255,.8));
+}
+
+.woodux-buying-checklist h4,
+.woodux-infobox h4 {
+  margin: 0 0 .8rem;
+  color: var(--wood-950);
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.woodux-buying-checklist ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.woodux-infobox {
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--wood-200);
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #fff, #f5ece3);
+}
+
+.woodux-infobox p {
+  margin: 0;
+  color: #514640;
+  line-height: 1.7;
+}
+
 body > main.max-w-5xl > h1 {
   color: var(--wood-950);
   font-size: clamp(2.2rem, 5vw, 3.6rem);
@@ -180,6 +296,16 @@ body > main.max-w-5xl > section a:hover,
 body > main.max-w-5xl > section a:focus {
   transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(78,47,36,.1);
+}
+
+@media (max-width: 760px) {
+  .woodux-visual-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .woodux-compare-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
